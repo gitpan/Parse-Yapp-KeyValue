@@ -1,5 +1,5 @@
 name:               Parse-Yapp-KeyValue
-version:            0.01
+version:            0.02
 abstract:           parser for simple key/value pairs
 license:            perl
 version_from:       lib/Parse/Yapp/KeyValue.pm

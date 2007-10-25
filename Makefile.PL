@@ -5,7 +5,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'Parse::Yapp::KeyValue',
     VERSION_FROM      => 'lib/Parse/Yapp/KeyValue.pm', # finds $VERSION
-    PREREQ_PM         => {}, # e.g., Module::Name => 1.1
+    PREREQ_PM         => { Parse::Lex => 0, Parse::Yapp => 0 }, # e.g., Module::Name => 1.1
 	NO_META           => 1,
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Parse/Yapp/KeyValue.pm', # retrieve abstract from module
