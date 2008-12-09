@@ -3,7 +3,7 @@ package Parse::Yapp::KeyValue;
 use strict;
 use warnings;
 
-our $VERSION = 0.02;
+our $VERSION = 0.10;
 
 =head1 NAME
 
@@ -41,10 +41,21 @@ contents:
 
      { A => [ 1, 2, 3 ] }
 
+tokens without an associated key name will be
+treated as pairs with an empty string for the
+key.  the string
+
+     yeah alabama "crimson tide"
+
+will return a hash reference with the following
+contents:
+
+     { '' => [ 'yeah', 'alabama', 'crimson tide' ] }
+
 =head1 SYNOPSIS
 
  my $str  = 'A=1 K=2 B=3 A=4';
- my $kv   = new Parse::KeyValue;
+ my $kv   = new Parse::Yapp::KeyValue;
  my $href = $kv->parse($str);
 
  print $href ? Dumper $href : "parse failed\n";
